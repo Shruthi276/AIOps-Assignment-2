@@ -1,0 +1,9 @@
+completion_index,total_rows,invalid_rows,pod_name,node_name,k8s_pod_phase
+0,50,3,shard-validator-0-sgqv2,minikube-m02,Succeeded
+1,50,6,shard-validator-1-zl8pr,minikube,Succeeded
+2,50,3,shard-validator-2-8zq4l,minikube-m02,Succeeded
+3,50,5,shard-validator-3-zlqrp,minikube,Succeeded
+4,50,2,shard-validator-4-m45dw,minikube,Succeeded
+5,50,6,shard-validator-5-2dfbl,minikube,Succeeded
+6,50,5,shard-validator-6-45zh9,minikube-m02,Succeeded
+7,50,3,shard-validator-7-h79np,minikube-m02,Succeeded

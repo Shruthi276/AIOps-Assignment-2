@@ -1,0 +1,45 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: shard-validator
+  labels:
+    app: shard-validator
+spec:
+  completions: 8
+  parallelism: 4
+  completionMode: Indexed
+  backoffLimit: 0
+  activeDeadlineSeconds: 600
+  template:
+    metadata:
+      labels:
+        app: shard-validator
+    spec:
+      restartPolicy: Never
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: shard-validator
+      containers:
+        - name: validator
+          image: shard-validator:1.1
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: SLEEP_SECONDS
+              value: "20"
+          resources:
+            requests:
+              cpu: "1"
+            limits:
+              cpu: "1"

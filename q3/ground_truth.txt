@@ -1,0 +1,8 @@
+shards/shard_0.csv: 3 seeded invalid rows
+shards/shard_1.csv: 6 seeded invalid rows
+shards/shard_2.csv: 3 seeded invalid rows
+shards/shard_3.csv: 5 seeded invalid rows
+shards/shard_4.csv: 2 seeded invalid rows
+shards/shard_5.csv: 6 seeded invalid rows
+shards/shard_6.csv: 5 seeded invalid rows
+shards/shard_7.csv: 3 seeded invalid rows
